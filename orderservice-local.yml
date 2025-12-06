@@ -18,7 +18,7 @@ spring:
           content-type: application/json
       kafka:
         binder:
-          brokers: kafka:29092  # DOĞRU
+          brokers: kafka:9092  # DOĞRU
 
 server:
   port: 8081
