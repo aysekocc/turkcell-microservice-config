@@ -27,6 +27,8 @@ spring:
 
   kafka:
     bootstrap-servers: localhost:29092
+    admin:
+      auto-create: true
 
 server:
   port: 8081
