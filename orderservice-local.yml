@@ -1,9 +1,15 @@
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
     producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    bootstrap-servers: localhost:9092
+
+  cloud:
+    stream:
+      default-binder: kafka
+      bindings:
+        NotificationCreatedFunction-out-0:
+          destination: notification-topic
+          content-type: application/json
 
   datasource:
     url: jdbc:postgresql://localhost:5435/postgres
