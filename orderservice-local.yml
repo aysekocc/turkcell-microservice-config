@@ -17,14 +17,14 @@ spring:
       default-binder: kafka
       kafka:
         binder:
-          brokers: kafka:9092
+          brokers: localhost:9092
       bindings:
         NotificationCreatedFunction-out-0:
           destination: notification-topic
           content-type: application/json
 
   kafka:
-    bootstrap-servers: localhost:29092
+    bootstrap-servers: localhost:9092
     admin:
       auto-create: true
 
