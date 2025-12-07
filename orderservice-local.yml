@@ -13,8 +13,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   cloud:
-    function:
-      definition: orderCreatedFunction
     stream:
       default-binder: kafka
       kafka:
