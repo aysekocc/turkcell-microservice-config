@@ -1,4 +1,10 @@
 spring:
+  kafka:
+    bootstrap-servers: kafka:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
   datasource:
     url: jdbc:postgresql://localhost:5435/postgres
     username: postgres
@@ -12,16 +18,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-  cloud:
-    stream:
-      default-binder: kafka
-      kafka:
-        binder:
-          brokers: kafka:9092
-      bindings:
-        NotificationCreatedFunction-out-0:
-          destination: notification-topic
-          content-type: application/json
 
 server:
   port: 8081
