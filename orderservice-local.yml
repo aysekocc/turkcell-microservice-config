@@ -17,7 +17,7 @@ spring:
       default-binder: kafka
       kafka:
         binder:
-          brokers: kafka:9092
+          brokers: localhost:9092
       bindings:
         NotificationCreatedFunction-out-0:
           destination: notification-topic
