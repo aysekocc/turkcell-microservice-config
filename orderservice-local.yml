@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: producer:app
   kafka:
     bootstrap-servers: localhost:9092
     properties:
@@ -9,6 +11,7 @@ spring:
       security:
         protocol: SASL_SSL
     producer:
+      topic: test-topic
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
