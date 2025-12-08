@@ -3,23 +3,10 @@ spring:
     name: order-service
   kafka:
     bootstrap-servers: localhost:9092
-    properties:
-      sasl:
-        mechanism: SCRAM-SHA-256
-        jaas:
-          config: org.apache.kafka.common.security.scram.ScramLoginModule
-      security:
-        protocol: SASL_SSL
     producer:
       topic: test-topic
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      properties:
-        spring:
-          json:
-            add:
-              type:
-                headers: false
 
   datasource:
     url: jdbc:postgresql://localhost:5435/postgres
