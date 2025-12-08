@@ -1,11 +1,13 @@
 spring:
   application:
-    name: spring-boot-kafka-example
+    name: order-service
   kafka:
     bootstrap-servers: localhost:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    template:
+      default-topic: order-topic
 
   datasource:
     url: jdbc:postgresql://localhost:5435/postgres
